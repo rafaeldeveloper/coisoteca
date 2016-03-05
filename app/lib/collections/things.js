@@ -1,4 +1,4 @@
-Things = new Meteor.Collection('posts');
+Things = new Meteor.Collection('things');
 
 Schemas = {};
 
@@ -45,13 +45,3 @@ Schemas.Things = new SimpleSchema({
 });
 
 Things.attachSchema(Schemas.Things)
-
-
-AdminConfig = {
-name: 'Coisoteca!!!',
-adminEmails: [' rafaelcosta@gocase.com'],
-collections:
-{
-Things: {}
-}
-} 
