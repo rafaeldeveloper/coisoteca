@@ -1,7 +1,7 @@
 
 AdminConfig = {
   name: 'Coisoteca',
-  adminEmails: [' rafaelcosta@gocase.com'],
+  adminEmails: [],
   collections:
   {
    Things: {}

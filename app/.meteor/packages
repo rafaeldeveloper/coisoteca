@@ -18,12 +18,14 @@ ecmascript              # Enable ECMAScript2015+ syntax in app code
 
 insecure                # Allow all DB writes from clients (for prototyping)
 yogiben:admin
-accounts-ui
-accounts-base
-accounts-password
 fortawesome:fontawesome
 twbs:bootstrap
 alanning:roles
 aldeed:collection2
 dburles:collection-helpers
 iron:router
+ian:accounts-ui-bootstrap-3
+accounts-password
+accounts-base
+accounts-facebook
+accounts-google
