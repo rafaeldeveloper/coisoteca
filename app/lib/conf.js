@@ -1,9 +1,15 @@
 
 AdminConfig = {
   name: 'Coisoteca',
-  adminEmails: [],
+  adminEmails: ['rafael@gocase.com'],
   collections:
   {
    Things: {}
   }
 } 
+
+
+Router.route('/', function () {
+  this.render('home');
+});
+
