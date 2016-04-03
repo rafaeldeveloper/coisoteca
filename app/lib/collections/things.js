@@ -1,22 +1,24 @@
-Things = new Meteor.Collection('things');
+Coisas = new Meteor.Collection('things');
 
 Schemas = {};
 
 
-Schemas.Things = new SimpleSchema({
+Schemas.Coisas = new SimpleSchema({
   title: {
     type: String,
+    label: 'Titulo',    
     max: 60
   },
   content: {
     type: String,
+    label: 'Descrição',    
     autoform: {
       rows: 5
     }
   },
   createdAt: {
     type: Date,
-    label: 'Date',
+    label: 'Data',
     autoValue: function () {
       if (this.isInsert) {
         return new Date();
@@ -44,4 +46,4 @@ Schemas.Things = new SimpleSchema({
   }
 });
 
-Things.attachSchema(Schemas.Things)
+Coisas.attachSchema(Schemas.Coisas)

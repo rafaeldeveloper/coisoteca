@@ -4,12 +4,15 @@ AdminConfig = {
   adminEmails: ['rafael@gocase.com'],
   collections:
   {
-   Things: {}
+   Coisas: {}
   }
 } 
 
 
 Router.route('/', function () {
-  this.render('home');
+  if (Meteor.userId()) {
+    Router.go('/admin');
+  }else{
+     this.render('home');
+  }
 });
-
