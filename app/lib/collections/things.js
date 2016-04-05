@@ -4,18 +4,21 @@ Schemas = {};
 
 
 Schemas.Coisas = new SimpleSchema({
-  title: {
-    type: String,
-    label: 'Titulo',    
-    max: 60
-  },
-  content: {
+  descricao: {
     type: String,
     label: 'Descrição',    
-    autoform: {
-      rows: 5
-    }
+    max: 60
   },
+  local: {
+    type: String,
+    label: 'Local',    
+    max: 60
+  },
+  responsible: {
+    type: String,
+    label: 'Responsável',    
+    max: 60
+  },  
   createdAt: {
     type: Date,
     label: 'Data',

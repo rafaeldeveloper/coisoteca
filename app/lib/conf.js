@@ -1,10 +1,23 @@
 
 AdminConfig = {
+  userSchema: null,
   name: 'Coisoteca',
   adminEmails: ['rafael@gocase.com'],
   collections:
   {
-   Coisas: {}
+   Coisas: {
+      tableColumns: [
+       { label: 'Descrição', name: 'descricao' },
+       { label: 'Local', name: 'local' },
+       { label: 'Data', name: 'createdAt', 'type' : 'date' }
+      ],    
+      templates: {
+        new: {
+          name: 'AddCoisa'
+        }
+      }
+
+   }
   }
 } 
 
@@ -16,3 +29,4 @@ Router.route('/', function () {
      this.render('home');
   }
 });
+
