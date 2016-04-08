@@ -22,7 +22,6 @@ AdminConfig = {
       icon:'star',
       tableColumns: [
        { label: 'Descrição', name: 'descricao' },
-       { label: 'Local', name: 'local' }
       ]//,    
       // templates: {
       //   new: {
