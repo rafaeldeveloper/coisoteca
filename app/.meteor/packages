@@ -27,3 +27,5 @@ ian:accounts-ui-bootstrap-3
 accounts-password
 accounts-base
 rafael:admin
+accounts-facebook
+accounts-google
