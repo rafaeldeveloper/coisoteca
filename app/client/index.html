@@ -7,17 +7,7 @@
 </body>
 
 <template name="AddCoisa">
-<!-- 	  {{> quickForm collection="Coisas" id="insertBookForm" type="insert"}} -->
-
-  {{#autoForm collection="Coisas" id="insertCoisasForm" type="insert"}}
-    <fieldset>
-      {{> afQuickField name='descricao'}}
-      {{> afQuickField name='local'}}
-    </fieldset>
-    <button type="submit" class="btn btn-primary">Salvar</button>
-
-  {{/autoForm}}
-    
+	  {{> quickForm collection="Coisas" id="insertBookForm" type="insert"}}    
 </template>
 
 <template name="home">

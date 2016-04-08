@@ -8,8 +8,7 @@ AdminConfig = {
    Coisas: {
       tableColumns: [
        { label: 'Descrição', name: 'descricao' },
-       { label: 'Local', name: 'local' },
-       { label: 'Data', name: 'createdAt', 'type' : 'date' }
+       { label: 'Local', name: 'local' }
       ],    
       templates: {
         new: {
@@ -17,7 +16,21 @@ AdminConfig = {
         }
       }
 
-   }
+   },
+   Classification: {
+      label:'Classificação',
+      icon:'star',
+      tableColumns: [
+       { label: 'Descrição', name: 'descricao' },
+       { label: 'Local', name: 'local' }
+      ]//,    
+      // templates: {
+      //   new: {
+      //     name: 'AddCoisa'
+      //   }
+      // }
+
+   }   
   }
 } 
 

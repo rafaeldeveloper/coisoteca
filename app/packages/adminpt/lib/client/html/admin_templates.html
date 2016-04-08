@@ -92,21 +92,6 @@
 			{{> quickForm id="adminUpdateUser" buttonContent="Update" buttonClasses="btn btn-primary btn-sm" collection=adminGetUsers schema=adminGetUserSchema doc=admin_current_doc omitFields="roles,services"}}
 			<hr/>
 			{{/if}}
-
-			<h4>Permissões de Usuários</h4>
-			{{#each roles}}
-			<button class="btn btn-primary btn-xs btn-remove-role" role="{{this}}" user="{{admin_current_id}}">{{this}}</button>
-			{{/each}}
-			{{#each otherRoles}}
-			<button class="btn btn-default btn-xs btn-add-role" role="{{this}}" user="{{admin_current_id}}">{{this}}</button>
-			{{/each}}
-			{{#if roles}}
-			<p style="margin-top:5px;">Clique em uma permissão para adiciona-lá.</p>
-			{{else}}
-			<p>Usuário Não tem Permissões . Clique em uma para adicioná-la.</p>
-			{{/if}}
-
-			<hr/>
 			<h4>Resetar Senha</h4>
 			{{#autoForm id="adminSendResetPasswordEmail" schema=AdminSchemas.sendResetPasswordEmail type="method" meteormethod="adminSendResetPasswordEmail"}}
 			<div class="form-group hidden">
