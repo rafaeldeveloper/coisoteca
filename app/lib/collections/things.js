@@ -16,6 +16,7 @@ Schemas.Coisas = new SimpleSchema({
   },
   responsible: {
     type: String,
+    optional: true,
     label: 'Responsável',    
     max: 60
   },  

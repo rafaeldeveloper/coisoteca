@@ -33,6 +33,7 @@ AdminConfig = {
   }
 } 
 
+// AdminDashboard.addSidebarItem('Pesquisa Inteligente', AdminDashboard.path('/Coisas/smartSearch'), { icon: 'search' })
 
 Router.route('/', function () {
   if (Meteor.userId()) {
@@ -40,5 +41,18 @@ Router.route('/', function () {
   }else{
      this.render('home');
   }
+});
+
+AdminDashboard.addCollectionItem(function (collection, path) {
+  if (collection === 'Coisas') {
+    return {
+      title: 'Pesquisa Inteligente',
+      url: path + '/smartSearch'
+    };
+  }
+});
+
+Router.route('/admin/Coisas/smartSearch', function () {
+     this.render('AddCoisa');
 });
 
