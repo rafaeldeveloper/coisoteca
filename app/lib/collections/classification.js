@@ -7,7 +7,8 @@ Schemas.Classification = new SimpleSchema({
   descricao: {
     type: String,
     label: 'Descrição',    
-    max: 60
+    max: 60,
+    unique:true
   }
 });
 

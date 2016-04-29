@@ -8,7 +8,11 @@ AdminConfig = {
    Coisas: {
       tableColumns: [
        { label: 'Descrição', name: 'descricao' },
-       { label: 'Local', name: 'local' }
+       { label: 'Local', name: 'local' },
+       { label: 'Classificação', name: 'thingClassification' },
+       { label: 'Categoria', name: 'thingCategorie' },
+       { label: 'Responsável', name: 'responsible' },
+       { label: 'Data', name: 'createdAt' },
       ],    
       templates: {
         new: {
@@ -29,7 +33,20 @@ AdminConfig = {
       //   }
       // }
 
-   }   
+   },
+   Categories: {
+      label:'Categoria',
+      icon:'tags',
+      tableColumns: [
+       { label: 'Descrição', name: 'descricao' },
+      ]//,    
+      // templates: {
+      //   new: {
+      //     name: 'AddCoisa'
+      //   }
+      // }
+
+   }         
   }
 } 
 

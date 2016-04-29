@@ -2,7 +2,6 @@ Coisas = new Meteor.Collection('things');
 
 Schemas = {};
 
-
 Schemas.Coisas = new SimpleSchema({
   descricao: {
     type: String,
@@ -14,12 +13,39 @@ Schemas.Coisas = new SimpleSchema({
     label: 'Local',    
     max: 60
   },
-  responsible: {
+ thingCategorie:{
+     type: String,
+    autoform: {
+        type: "select", 
+        options: function () {
+        return Categories.find().map(function (c) {
+        return {label: c.descricao, value: c._id};
+        });
+        }
+      },
+    label: "Categoria da Coisa",
+    optional:true 
+  },
+ responsible: {
     type: String,
     optional: true,
     label: 'Responsável',    
     max: 60
-  },  
+  },
+ thingClassification:{
+     type: String,
+    autoform: {
+        type: "select", 
+        options: function () {
+        return Classification.find().map(function (c) {
+        return {label: c.descricao, value: c._id};
+        });
+        }
+      },
+    label: "Classificação da Coisa",
+    optional:true 
+  },
+  
   createdAt: {
     type: Date,
     label: 'Data',
@@ -28,26 +54,9 @@ Schemas.Coisas = new SimpleSchema({
         return new Date();
       }
     }
-  },
-  owner: {
-    type: String,
-    regEx: SimpleSchema.RegEx.Id,
-    autoValue: function () {
-      if (this.isInsert) {
-        return Meteor.userId();
-      }
-    },
-    autoform: {
-      options: function () {
-        _.map(Meteor.users.find().fetch(), function (user) {
-          return {
-            label: user.emails[0].address,
-            value: user._id
-          };
-        });
-      }
-    }
   }
+
 });
 
 Coisas.attachSchema(Schemas.Coisas)
+
