@@ -5,7 +5,8 @@ AdminConfig = {
   adminEmails: ['rafael@gocase.com'],
   collections:
   {
-   Coisas: {
+   Things: {
+      label:'Coisas',
       tableColumns: [
        { label: 'Descrição', name: 'descricao' },
        { label: 'Local', name: 'local' },
@@ -16,11 +17,27 @@ AdminConfig = {
       ],    
       templates: {
         new: {
-          name: 'AddCoisa'
-        }
+          name: 'AddThing'
+        },
+       view: {
+          name: 'viewThing'
+        },        
       }
 
    },
+ //  Coisas: {
+   //    label:'Coisa',
+   //    icon:'star',
+   //    tableColumns: [
+   //     { label: 'Descrição', name: 'descricao' },
+   //    ]//,    
+   //    // templates: {
+   //    //   new: {
+   //    //     name: 'AddCoisa'
+   //    //   }
+   //    // }
+
+   // },
    Classification: {
       label:'Classificação',
       icon:'star',
@@ -59,17 +76,3 @@ Router.route('/', function () {
      this.render('home');
   }
 });
-
-AdminDashboard.addCollectionItem(function (collection, path) {
-  if (collection === 'Coisas') {
-    return {
-      title: 'Pesquisa Inteligente',
-      url: path + '/smartSearch'
-    };
-  }
-});
-
-Router.route('/admin/Coisas/smartSearch', function () {
-     this.render('AddCoisa');
-});
-

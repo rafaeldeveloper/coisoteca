@@ -1,8 +1,8 @@
-Coisas = new Meteor.Collection('things');
+Things = new Meteor.Collection('things');
 
 Schemas = {};
 
-Schemas.Coisas = new SimpleSchema({
+Schemas.Things = new SimpleSchema({
   descricao: {
     type: String,
     label: 'Descrição',    
@@ -19,7 +19,7 @@ Schemas.Coisas = new SimpleSchema({
         type: "select", 
         options: function () {
         return Categories.find().map(function (c) {
-        return {label: c.descricao, value: c._id};
+        return {label: c.descricao, value: c.descricao};
         });
         }
       },
@@ -38,7 +38,7 @@ Schemas.Coisas = new SimpleSchema({
         type: "select", 
         options: function () {
         return Classification.find().map(function (c) {
-        return {label: c.descricao, value: c._id};
+        return {label: c.descricao, value: c.descricao};
         });
         }
       },
@@ -54,9 +54,16 @@ Schemas.Coisas = new SimpleSchema({
         return new Date();
       }
     }
+  },
+  owner: {
+    type: String,
+    label: 'Dono',
+    autoValue: function () {
+      if (this.isInsert) {
+        return Meteor.userId();
+      }
+    }
   }
-
 });
-
-Coisas.attachSchema(Schemas.Coisas)
+Things.attachSchema(Schemas.Things)
 

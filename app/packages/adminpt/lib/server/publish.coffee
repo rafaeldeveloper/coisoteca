@@ -33,7 +33,7 @@ Meteor.publish 'adminCollectionsCount', ->
 
 	_.each collectionsWithoutCustomCounter, (collection, name) ->
 		id = new Mongo.ObjectID
-		count = 1
+		count = 0
 
 		ready = false
 		handles.push adminCollectionObject(name).find().observeChanges

@@ -1,0 +1,54 @@
+<template name="viewThing">
+    <div class="box">
+        <div class="box-header">
+            <div class="box-toolbar"></div>
+           <!--  <div class="input-group col-xs-2" >
+                <input id="searchInput" type="search" class="form-control input-sm" placeholder="Filtrar">
+                <div class="input-group-btn">
+                    <button class="btn btn-sm btn-default">
+                        <i class="fa fa-search"></i> 
+                    </button>
+                </div>
+            </div>       -->      
+        </div>
+        <div class="box-body">
+            <!-- <div class="table-responsive"> -->
+              <table class="table dataTable no-footer">
+                <thead>
+                  <tr>
+                    <th>Descrição</th>
+                    <th>Local</th>
+                    <th>Categoria</th>
+                    <th>Responsável</th>
+                    <th>Classificação</th>
+                    <th>Data</th>
+                    <th width="5%">Editar</th>
+                    <th width="5%">Deletar</th>
+                  </tr>
+                </thead>
+                <tbody id="fbody">
+                    {{#each things}}
+                	<tr>    	
+		     
+		                    <td>{{descricao}}</td>
+		                    <td>{{local}}</td>	
+		                    <td>{{thingCategorie}}</td>	
+		                    <td>{{responsible}}</td>		                    	
+		                    <td>{{thingClassification}}</td>      
+		                    <td>{{createdAt}}</td>      
+		                    <td>
+		                        <a href="/admin/Things/{{_id}}/edit" class="hidden-xs btn btn-xs btn-primary"><i class="fa fa-pencil"></i></a>
+		                        <a href="/admin/Things/{{_id}}/edit" class="visible-xs btn btn-sm btn-primary"><i class="fa fa-pencil"></i> Editar</a>
+		                    </td>
+		                    <td>
+			                    <a data-toggle="modal" doc="{{_id}}" href="#admin-delete-modal" class="hidden-xs btn btn-xs btn-danger btn-delete"><i class="fa fa-times" doc="{{_id}}"></i></a>
+			                    <a data-toggle="modal" doc="{{_id}}" href="#admin-delete-modal" class="visible-xs btn btn-sm btn-danger btn-delete"><i class="fa fa-times" doc="{{_id}}"></i> Deletar</a>
+		                    </td>
+		             </tr>
+                    {{/each}}          
+                </tbody>
+              </table>
+            <!-- </div>             -->
+        </div>
+    </div>
+</template>

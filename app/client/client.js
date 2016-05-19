@@ -5,6 +5,10 @@ Accounts.ui.config({
 accountsUIBootstrap3.setLanguage('pt-BR')
 
 
+Meteor.subscribe("classification");
+Meteor.subscribe("categories");
+Meteor.subscribe("things");
+
 /* This helper is copied from https://github.com/yogiben/meteor-admin/blob/master/lib/client/js/helpers.coffee.
  I used this to remove the (irrelevant) Meteor.users collection from the dashboard and sidebar (the routes still exist).
  TODO: Maybe a future version of yogiben:admin could allow this without monkey-patching?
@@ -23,4 +27,11 @@ UI.registerHelper("admin_collections", function() {
       newPath: Router.path("adminDashboard" + key + "New")
     });
   });
+});
+
+
+Template.viewThing.helpers({
+	things: function () {
+		return Things.find();
+	}
 });
