@@ -35,3 +35,7 @@ Template.viewThing.helpers({
 		return Things.find();
 	}
 });
+
+Template.registerHelper('formatDate', function(date) {
+  return moment(date).format('DD-MM-YYYY');
+});
